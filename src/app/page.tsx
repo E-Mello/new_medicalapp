@@ -46,20 +46,15 @@ export default function Home() {
   // Função para filtrar médicos com base na categoria selecionada
   const filteredMedicalData = selectedCategorias
     ? medicalData.filter(
-        (medical) => medical.category_id === selectedCategorias.id // Comparando os IDs de categoria
+        (medical) => medical.category_id === selectedCategorias.id
       )
-    : medicalData; // Se nenhuma categoria for selecionada, mostra todos os médicos
+    : medicalData;
 
   return (
     <div className="min-h-screen bg-[#f7f7f7]">
-      {/* Header */}
-
       <div className="bg-[#51A8FF] text-white p-6 pt-16 pb-8 relative">
         <div className="flex justify-between">
-          <div>
-            <p className="text-lg pt-4">Olá, João</p>
-          </div>
-          <div></div>
+          <p className="text-lg pt-4">Olá, João</p>
           <div className="flex top-16 right-6 bg-[#63b1ff] py-3 px-4 rounded-2xl">
             <img
               src="/icons/notification.png"
@@ -68,24 +63,22 @@ export default function Home() {
             />
           </div>
         </div>
-        <h1 className="text-3xl font-bold mt-3 mb-8 ">
-          Vamos encontrar
-          <br />
-          seu melhor médico!
-        </h1>
-        <div className="mt-4 relative">
-          <button className="absolute top-1 right-1 p-3">
-            <img src="/icons/lupa.png" alt="Pesquisa" />
-          </button>
-          <input
-            type="text"
-            placeholder="Procure aqui..."
-            className="w-full px-3 py-4 rounded-full border focus:outline-none text-black"
-          />
-        </div>
       </div>
-
-      {/* Categorias */}
+      <h1 className="text-3xl font-bold mt-3 mb-8 ">
+        Vamos encontrar
+        <br />
+        seu melhor médico!
+      </h1>
+      <div className="mt-4 relative">
+        <button className="absolute top-1 right-1 p-3">
+          <img src="/icons/lupa.png" alt="Pesquisa" />
+        </button>
+        <input
+          type="text"
+          placeholder="Procure aqui..."
+          className="w-full px-3 py-4 rounded-full border focus:outline-none text-black"
+        />
+      </div>
       <div className="px-8 pb-6 pt-4">
         <h2 className="font-poppins text-xl text-black mb-4">Categorias</h2>
         <div className="flex pt-3 justify-between">
@@ -112,7 +105,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Cards Médicos */}
       <div className="max-w-[90vw] mx-auto pb-24">
         {filteredMedicalData.length > 0 ? (
           filteredMedicalData.map((medical) => (
@@ -134,7 +126,6 @@ export default function Home() {
         )}
       </div>
 
-      {/* Footer */}
       <div className="fixed bottom-0 left-0 h-24 w-full bg-white p-6 flex justify-around">
         <button>
           <img src="/icons/home.png" alt="home" />
